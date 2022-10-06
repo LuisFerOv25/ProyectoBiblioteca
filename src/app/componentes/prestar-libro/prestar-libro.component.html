@@ -1,0 +1,50 @@
+<div class="row mt3 py-3 mx-5">
+    <div class="col lg6 text-center">
+      <h3>Repositorio de libros disponibles</h3>
+    </div>
+
+
+    <table
+      class="table table-hover border-dark text-center"
+      *ngIf="prestamoLib.length > 0"
+    >
+      <thead>
+        <tr class="text-center">
+          <td>ISBN</td>
+          <td>Nombre</td>
+          <td>Fecha prestamo</td>
+          <td>Duracion</td>
+          <td>Nombre prestador</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prest of prestamoLib">
+          <td>
+            {{ prest.ISBN }} 
+          </td>
+          <td>
+            {{ prest.nombre }}
+          </td>
+          <td>
+            {{ prest.fecha  | date: "dd/mm/yyyy"}}
+          </td>
+          <td>
+            {{ prest.duracion }}
+          </td>
+          <td>
+            {{ prest.nombrepres }}
+          </td>
+          <td style="width: 5%">
+            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+          </td>
+          <td style="width: 5%">
+            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="prestamoLib.length == 0" class="row mt5">
+      <h4>No hay ningun comentario registrado</h4>
+    </div>
+  </div>
+  

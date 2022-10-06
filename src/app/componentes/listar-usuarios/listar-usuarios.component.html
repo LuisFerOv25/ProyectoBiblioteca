@@ -1,0 +1,47 @@
+<div class="row mt3 py-3 mx-5">
+    <div class="col lg6">
+      <h3>Lista de usuarios en el sistema</h3>
+    </div>
+
+
+    <table
+      class="table table-hover border-dark text-center"
+      *ngIf="listaUsuarios.length > 0"
+    >
+      <thead>
+        <tr class="text-center">
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Celular</td>
+          <td>Correo</td>
+          <td>Operaciones</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of listaUsuarios">
+          <td>
+            {{ user.nombre }} 
+          </td>
+          <td>
+            {{ user.apellido }}
+          </td>
+          <td>
+            {{ user.celular }}
+          </td>
+          <td>
+            {{ user.correo }}
+          </td>
+          <td style="width: 5%">
+            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+          </td>
+          <td style="width: 5%">
+            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="listaUsuarios.length == 0" class="row mt5">
+      <h4>No hay ningun comentario registrado</h4>
+    </div>
+  </div>
+  

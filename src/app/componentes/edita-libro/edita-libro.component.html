@@ -1,0 +1,32 @@
+
+<h3 class="mt-3" text-center>Editar libro</h3>
+
+<form [formGroup]="editaLib" (ngSubmit)="modificar()">
+    <div class="mb-3">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input type="text" formControlName="isbn" class="form-control" id="isbn" autocomplete="off"> 
+      <span *ngIf="editaLib.get('isbn')?.invalid && editaLib.get('isbn')?.touched" class="text-danger">
+        El <strong>isbn</strong> es un campo requerido
+      </span>
+    </div>
+
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="text" formControlName="titulo" class="form-control" id="titulo" autocomplete="off"> 
+        <span *ngIf="editaLib.get('titulo')?.invalid && editaLib.get('titulo')?.touched" class="text-danger">
+          El <strong>titulo</strong> es un campo requerido
+        </span>
+      </div>
+
+      <div class="mb-3">
+        <label for="editorial" class="form-label">Editoral</label>
+        <input type="text" formControlName="editorial" class="form-control" id="editorial" autocomplete="off"> 
+        <span *ngIf="editaLib.get('editorial')?.invalid && editaLib.get('editorial')?.touched" class="text-danger">
+          El <strong>editorial</strong> es un campo requerido
+        </span>
+      </div>
+
+    
+    <button type="submit" [disabled]="editaLib.invalid" class="btn btn-primary float-ed ">Agregar</button>
+    <button routerLink="/" class="btn btn-secundary">Regresar</button>
+  </form>
