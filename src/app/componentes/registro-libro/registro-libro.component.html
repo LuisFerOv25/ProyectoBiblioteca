@@ -18,26 +18,45 @@
                 <div class="col-sm-5 ">
 
 
-                    <form>
+                    <form [formGroup]="registroLibr" (ngSubmit)="reglib()">
                         <div class="mb-3">
                             <label for="isbn" class="form-label">ISBN:</label>
-                            <input type="text" class="form-control" id="isbn" name="isbn" />
+                            <input type="text"  formControlName="isbn" class="form-control" id="isbn" name="isbn" autocomplete="off"/>
+                            <span *ngIf="registroLibr.get('isbn')?.invalid && registroLibr.get('isbn')?.touched" class="text-danger">
+                                 <strong>isbn</strong> es un campo requerido
+                              </span>
                         </div>
                         <div class="mb-3">
                             <label for="nom_lib" class="form-label">Nombre del libro:</label>
-                            <input type="text" class="form-control" id="nom_lib" name="nom_lib" />
+                            <input type="text" formControlName="nom_lib" class="form-control" id="nom_lib" name="nom_lib" autocomplete="off"/>
+                            <span *ngIf="registroLibr.get('nom_lib')?.invalid && registroLibr.get('nom_lib')?.touched" class="text-danger">
+                                El <strong>nombre</strong> es un campo requerido
+                              </span>
                         </div>
                         <div class="mb-3">
                             <label for="autor" class="form-label">Autor:</label>
-                            <input type="text" class="form-control" id="autor" name="autor" />
+                            <input type="text" formControlName="autor" class="form-control" id="autor" name="autor" autocomplete="off" />
+                            <span *ngIf="registroLibr.get('autor')?.invalid && registroLibr.get('autor')?.touched" class="text-danger">
+                                El <strong>autor</strong> es un campo requerido
+                              </span>
                         </div>
                     
                         <div class="mb-3">
                             <label for="editorial" class="form-label">Editorial:</label>
-                            <input type="text" class="form-control" id="editorial" name="editorial" />
+                            <input type="text" formControlName="editorial" class="form-control" id="editorial" name="editorial" autocomplete="off"/>
+                            <span *ngIf="registroLibr.get('editorial')?.invalid && registroLibr.get('editorial')?.touched" class="text-danger">
+                                La <strong>editorial</strong> es un campo requerido
+                              </span>
                         </div>
 
-
+                        <div class="mx-auto" style="width:190px;">
+                          
+                            <button type="submit" [disabled]="registroLibr.invalid" class="btn btn-primary float-ed ">Registrate</button>
+                         
+                            <div class="regresar py-2" >
+                                <button routerLink="/" class="btn btn-secundary">Regresar</button>
+                            </div>
+                          </div>
 
                     </form>
                 </div>
@@ -45,12 +64,7 @@
         </div>
 
     </div>
-    <div class="mx-auto" style="width:190px;">
-        <input class="btn btn-success" type="submit" value="Registrarme">
-        <div class="regresar py-2" >
-        <button type="button" class="btn btn-secondary">Volver</button>
-        </div>
-      </div>
+
 
 </div>
 
