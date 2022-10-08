@@ -62,8 +62,7 @@
     background: url("https://cdn.pixabay.com/photo/2016/08/31/09/06/silhouette-1632912_960_720.jpg") no-repeat center center scroll;
     background-size: cover;
     float: left;
-    -webkit-animation: bgslide 2.3s forwards;
-            animation: bgslide 2.3s forwards;
+  
   }
   .bg-illustration img {
     width: 248px;
@@ -309,8 +308,6 @@
       width: 100%;
     }
     .login .container {
-      -webkit-animation: slideIn 0.8s ease-in-out forwards;
-              animation: slideIn 0.8s ease-in-out forwards;
       width: 85%;
       float: none;
     }
@@ -319,7 +316,7 @@
       margin-top: 40px;
     }
     .login .container .login-form {
-      margin-top: 90px;
+      margin-top: 60px;
     }
     .login .container .login-form form input {
       height: 45px;
@@ -358,7 +355,7 @@
       width: 100%;
       border-radius: 100px;
       background: -webkit-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
-      background: -o-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
+      background: -o-linear-gradient(110deg, #8fac0e 0%, #fdd6bd 100%);
       background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
       bottom: -4px;
       left: 0;
