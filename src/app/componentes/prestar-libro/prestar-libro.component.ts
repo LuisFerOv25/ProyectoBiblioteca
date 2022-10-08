@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Libro } from 'src/app/interfaces/libros';
 import { prestamoLib } from 'src/app/interfaces/prestamolib';
 
@@ -9,21 +10,37 @@ import { prestamoLib } from 'src/app/interfaces/prestamolib';
 })
 export class PrestarLibroComponent implements OnInit {
 
-  prestamoLib: prestamoLib[] = [
-    {
-      ISBN: '12345645',
-      nombre: 'Angeles caidos',
-      autor: 'Anonimo',
-      fecha: new Date(),
-      duracion: '5 dias',
-      nombrepres: 'antonio velas'
+  prestarLib: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.prestarLib=this.fb.group({
+      cedula:['',Validators.required],
+      nombre:['',Validators.required],
+      correo:['',Validators.required],
+      celular:['',Validators.required],
+      isbn:['',Validators.required],
+      fechapres:['',Validators.required],
+      duracion:['',Validators.required]
     }
-
-  ]
-
-  constructor() { }
+    )
+  }
 
   ngOnInit(): void {
+  }
+
+
+  prestar(){
+    console.log(this.prestarLib);
+    const prestamo:prestamoLib={
+      cedula: this.prestarLib.get('cedula')?.value,
+      nombre: this.prestarLib.get('nombre')?.value,
+      correo: this.prestarLib.get('correo')?.value,
+      celular: this.prestarLib.get('celular')?.value,
+      isbn: this.prestarLib.get('isbn')?.value,
+      fechapres: this.prestarLib.get('fechapres')?.value,
+      duracion: this.prestarLib.get('duracion')?.value,
+    }
+    console.log(prestamo);
   }
 
 }

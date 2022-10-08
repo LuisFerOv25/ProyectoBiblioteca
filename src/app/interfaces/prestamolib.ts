@@ -1,11 +1,12 @@
 export interface prestamoLib{
 
     id?: number;
-    ISBN: string;
+    cedula: string;
     nombre:string;
-    autor:string;
-    fecha: Date;
-    duracion:  string;
-    nombrepres: string;
+    correo:string;
+    celular: string;
+    isbn:  string;
+    fechapres: Date;
+    duracion: string;
     
 }
