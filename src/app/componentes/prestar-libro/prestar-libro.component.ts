@@ -13,6 +13,7 @@ export class PrestarLibroComponent implements OnInit {
     {
       ISBN: '12345645',
       nombre: 'Angeles caidos',
+      autor: 'Anonimo',
       fecha: new Date(),
       duracion: '5 dias',
       nombrepres: 'antonio velas'

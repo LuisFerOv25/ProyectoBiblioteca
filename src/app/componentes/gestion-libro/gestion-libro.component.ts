@@ -11,6 +11,7 @@ export class GestionLibroComponent implements OnInit {
     {
       ISBN: '12345645',
       titulo: 'Angeles caidos',
+      autor: 'Anonimo',
       editorial: 'Alfaguara',
     }
 

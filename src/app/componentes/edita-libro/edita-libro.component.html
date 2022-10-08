@@ -19,6 +19,14 @@
       </div>
 
       <div class="mb-3">
+        <label for="autor" class="form-label">Autor</label>
+        <input type="text" formControlName="autor" class="form-control" id="autor" autocomplete="off"> 
+        <span *ngIf="editaLib.get('autor')?.invalid && editaLib.get('autor')?.touched" class="text-danger">
+          El <strong>titulo</strong> es un campo requerido
+        </span>
+      </div>
+
+      <div class="mb-3">
         <label for="editorial" class="form-label">Editoral</label>
         <input type="text" formControlName="editorial" class="form-control" id="editorial" autocomplete="off"> 
         <span *ngIf="editaLib.get('editorial')?.invalid && editaLib.get('editorial')?.touched" class="text-danger">

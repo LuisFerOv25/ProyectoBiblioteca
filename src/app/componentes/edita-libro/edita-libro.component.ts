@@ -14,6 +14,7 @@ export class EditaLibroComponent implements OnInit {
     this.editaLib=this.fb.group({
       isbn:['',Validators.required],
       titulo:['',Validators.required],
+      autor:['',Validators.required],
       editorial:['',Validators.required]
     }
     )
@@ -28,6 +29,7 @@ export class EditaLibroComponent implements OnInit {
     const libro:Libro={
       ISBN: this.editaLib.get('isbn')?.value,
       titulo: this.editaLib.get('titulo')?.value,
+      autor: this.editaLib.get('autor')?.value,
       editorial: this.editaLib.get('editorial')?.value,
     }
     console.log(libro);
