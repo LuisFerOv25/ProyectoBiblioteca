@@ -35,16 +35,27 @@
                 </div>
                 <div class="mb-3">
                     <label for="apellido" class="form-label">Apellidos:</label>
+               
                     <input type="text" formControlName="apellido" class="form-control" id="apellido" name="apellido" autocomplete="off"/>
+                    <span *ngIf="registroUs.get('apellido')?.invalid && registroUs.get('apellido')?.touched" class="text-danger">
+                        el <strong>Apellido</strong> es un campo requerido
+                      </span>
                 </div>
 
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo:</label>
                     <input type="email" formControlName="correo" class="form-control" id="correo" name="correo"autocomplete="off" />
+                    <span *ngIf="registroUs.get('correo')?.invalid && registroUs.get('correo')?.touched" class="text-danger">
+                        el <strong>Correo</strong> es un campo requerido
+                      </span>
                 </div>
+
                 <div class="mb-3">
                     <label for="celular" class="form-label">Celular:</label>
                     <input type="tel" formControlName="celular" class="form-control" id="celular" name="celular" autocomplete="off"/>
+                    <span *ngIf="registroUs.get('celular')?.invalid && registroUs.get('celular')?.touched" class="text-danger">
+                        el <strong>Celular</strong> es un campo requerido
+                      </span>
                 </div>
 
 
@@ -72,7 +83,7 @@
     </div>
     <div class="col-2">
 
-        <button type="submit" class="btn btn-primary">Volver</button>
+        <button type="submit" routerLink="/" class="btn btn-primary">Volver</button>
     </div>
 
 </div>
