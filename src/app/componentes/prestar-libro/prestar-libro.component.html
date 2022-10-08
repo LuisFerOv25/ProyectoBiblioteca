@@ -1,83 +1,81 @@
 <app-navbar></app-navbar>
-<div class="container-sm px-5 text-center">
+<div class="container text-center">
   <h3 class="mt-3 text-center py-4">Formulario "Prestar libro"</h3>
-  <div class="row gx-5">
-    <div class="col">
-      <div class="p-3 border bg-light">
-
-        <form [formGroup]="prestarLib" (ngSubmit)="prestar()">
-          <div class="mb-3">
-            <label for="cedula" class="form-label">Cedula</label>
-            <input type="text" formControlName="cedula" class="form-control" id="cedula" autocomplete="off">
-            <span *ngIf="prestarLib.get('cedula')?.invalid && prestarLib.get('cedula')?.touched" class="text-danger">
-              La <strong>cedula</strong> es un campo requerido
-            </span>
-          </div>
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
+  <form [formGroup]="prestarLib" (ngSubmit)="prestar()">
+    <div class="row align-items-start">
+      <div class="col">
+        <label for="cedula" class="form-label">Cedula</label>
+        <input type="text" formControlName="cedula" class="form-control" id="cedula" autocomplete="off">
+        <span *ngIf="prestarLib.get('cedula')?.invalid && prestarLib.get('cedula')?.touched" class="text-danger">
+          La <strong>cedula</strong> es un campo requerido
+        </span>
+      </div>
+      <div class="col">
+        <label for="nombre" class="form-label">Nombre</label>
             <input type="text" formControlName="nombre" class="form-control" id="nombre" autocomplete="off">
             <span *ngIf="prestarLib.get('nombre')?.invalid && prestarLib.get('nombre')?.touched" class="text-danger">
               El <strong>nombre</strong> es un campo requerido
             </span>
-          </div>
-
-          <div class="mb-3">
-            <label for="correo" class="form-label">Correo</label>
-            <input type="text" formControlName="correo" class="form-control" id="correo" autocomplete="off">
-            <span *ngIf="prestarLib.get('correo')?.invalid && prestarLib.get('correo')?.touched" class="text-danger">
-              El <strong>correo</strong> es un campo requerido
-            </span>
-          </div>
-
-          <div class="mb-3">
-            <label for="celular" class="form-label">Celular</label>
-            <input type="text" formControlName="celular" class="form-control" id="celular" autocomplete="off">
-            <span *ngIf="prestarLib.get('celular')?.invalid && prestarLib.get('celular')?.touched" class="text-danger">
-              El <strong>celular</strong> es un campo requerido
-            </span>
-          </div>
-
-          <div class="mb-3">
-            <label for="isbn" class="form-label">ISBN</label>
-            <input type="text" formControlName="isbn" class="form-control" id="isbn" autocomplete="off">
-            <span *ngIf="prestarLib.get('isbn')?.invalid && prestarLib.get('isbn')?.touched" class="text-danger">
-              El <strong>isbn</strong> es un campo requerido
-            </span>
-          </div>
-
-          <div class="mb-3">
-            <label for="fechapres" class="form-label">Fecha prestamo</label>
-            <input type="text" formControlName="fechapres" class="form-control" id="fechapres" autocomplete="off">
-            <span *ngIf="prestarLib.get('fechapres')?.invalid && prestarLib.get('fechapres')?.touched"
-              class="text-danger">
-              La <strong>fecha del prestamo</strong> es un campo requerido
-            </span>
-          </div>
-          <div class="mb-3">
-            <label for="duracion" class="form-label">Duracion</label>
-            <input type="text" formControlName="duracion" class="form-control" id="duracion" autocomplete="off">
-            <span *ngIf="prestarLib.get('duracion')?.invalid && prestarLib.get('duracion')?.touched"
-              class="text-danger">
-              La <strong>duracion</strong> es un campo requerido
-            </span>
-          </div>
-
-          <button type="submit" [disabled]="prestarLib.invalid" class="btn btn-primary float-ed ">Prestar</button>
-          <button routerLink="/" class="btn btn-secundary">Regresar</button>
-        </form>
-
-
-
       </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="text" formControlName="correo" class="form-control" id="correo" autocomplete="off">
+        <span *ngIf="prestarLib.get('correo')?.invalid && prestarLib.get('correo')?.touched" class="text-danger">
+          El <strong>correo</strong> es un campo requerido
+        </span>
+      </div>
+      <div class="col">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" formControlName="celular" class="form-control" id="celular" autocomplete="off">
+        <span *ngIf="prestarLib.get('celular')?.invalid && prestarLib.get('celular')?.touched" class="text-danger">
+          El <strong>celular</strong> es un campo requerido
+        </span>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col">
+        <label for="isbn" class="form-label">ISBN</label>
+        <input type="text" formControlName="isbn" class="form-control" id="isbn" autocomplete="off">
+        <span *ngIf="prestarLib.get('isbn')?.invalid && prestarLib.get('isbn')?.touched" class="text-danger">
+          El <strong>isbn</strong> es un campo requerido
+        </span>
+      </div>
+      <div class="col">
+        <label for="fechapres" class="form-label">Fecha prestamo</label>
+        <input type="text" formControlName="fechapres" class="form-control" id="fechapres" autocomplete="off">
+        <span *ngIf="prestarLib.get('fechapres')?.invalid && prestarLib.get('fechapres')?.touched"
+          class="text-danger">
+          La <strong>fecha del prestamo</strong> es un campo requerido
+        </span>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-6">
+        <label for="duracion" class="form-label">Duracion</label>
+        <input type="text" formControlName="duracion" class="form-control" id="duracion" autocomplete="off">
+        <span *ngIf="prestarLib.get('duracion')?.invalid && prestarLib.get('duracion')?.touched"
+          class="text-danger">
+          La <strong>duracion</strong> es un campo requerido
+        </span>
+      </div>
+    </div>
+    <div class="py-4">
+    <button type="submit" [disabled]="prestarLib.invalid" class="btn btn-primary float-ed ">Prestar</button>
+    <button routerLink="/" class="btn btn-secundary">Regresar</button>
+    </div>
+  </form>
+</div>
+
+
       <div class="conteiner py-4">
 
-
-
-        <h3>Consultar Préstamo</h3>
-
+      
         <div class=" row">
-
-
+          <div class="text-center">
+          <h3>Consultar Préstamo</h3>
+          </div>
           <br>
 
           <div class="container">
@@ -85,45 +83,55 @@
               <div class="col-sm-5 ">
 
                 <br>
-                <nav class="navbar bg-light">
+                <nav class="navbar">
                   <div class="container-fluid">
                     <form class="d-flex" role="search">
                       <input class="form-control me-2" type="search" placeholder="Digíte su nombre" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Consultar</button>
+                      <button class="btn btn-secondary" type="submit">Consultar</button>
                     </form>
                   </div>
                 </nav>
                 <br>
-                <table class="table table-bordered border-primary">
-                  <thead>
-                    <tr>
-                      <th scope="col">Usuario</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">celular</th>
-                      <th scope="col">ISBN</th>
-                      <th scope="col">Libro</th>
-                      <th scope="col">Fecha de préstamo</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-
-
-                  </tbody>
-                </table>
+                <table
+                class="table table-hover border-dark text-center"> 
+              
+                <thead>
+                  <tr class="text-center">
+                    <td>Usuario</td>
+                    <td>Correo</td>
+                    <td>Celular</td>
+                    <td>ISBN</td>
+                    <td>Libro</td>
+                    <td>Fecha de prestamo</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                     
+                    </td>
+                    <td>
+                     
+                    </td>
+          
+                  </tr>
+                </tbody>
+              </table>
               </div>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
-  </div>
-</div>
