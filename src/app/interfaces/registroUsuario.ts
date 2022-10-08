@@ -1,4 +1,4 @@
-export interface Usuario{
+export interface Regus{
 
     
     id:string;

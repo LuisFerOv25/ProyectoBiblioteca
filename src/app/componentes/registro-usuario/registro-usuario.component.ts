@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/interfaces/registroUsuario';
+import { Regus } from 'src/app/interfaces/registroUsuario';
+
 
 @Component({
   selector: 'app-registro-usuario',
@@ -29,7 +30,7 @@ export class RegistroUsuarioComponent implements OnInit {
 
   reg(){
     console.log(this.registroUs);
-    const registro:Usuario={
+    const registro:Regus={
       id: this.registroUs.get('id')?.value,
       nombre: this.registroUs.get('nombre')?.value,
       apellido: this.registroUs.get('apellido')?.value,
