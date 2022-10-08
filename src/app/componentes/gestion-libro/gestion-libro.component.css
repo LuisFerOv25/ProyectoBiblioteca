@@ -1,0 +1,6 @@
+.search{
+    display: grid;
+    position: absolute;
+    width: 25rem;
+    right: 1px;
+}
